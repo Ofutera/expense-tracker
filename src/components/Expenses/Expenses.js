@@ -16,12 +16,13 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === year;
   });
 
+
   return (
     <div>
       <Card className="expenses">
         <ExpenseFilter selected={year} onSelectedYear={selectedYearHandler} />
         <ExpensesChart expenses={filteredExpenses} />
-        <ExpensesList filteredExpenses={filteredExpenses} />
+        <ExpensesList filteredExpenses={filteredExpenses} onDelete={props.onDelete}/>
       </Card>
     </div>
   );
